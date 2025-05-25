@@ -1,0 +1,255 @@
+/* Styles généraux et reset minimal */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box; /* Très important pour la gestion des tailles */
+}
+body {
+    font-family: Arial, sans-serif; /* Police de caractère de base */
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Un fond légèrement gris pour ne pas être trop blanc */
+    color: #333; /* Couleur de texte par défaut */
+}
+
+/* Utile pour centrer le contenu et lui donner une largeur maximale */
+.container {
+    width: 90%; /* Prend 90% de la largeur de l'écran */
+    max-width: 1200px; /* Mais ne dépasse pas 1200px sur les grands écrans */
+    margin: auto; /* Centre le container */
+    overflow: hidden; /* Pour gérer les flottants si tu en utilises plus tard */
+    padding: 20px 0; /* Un peu d'espace en haut et en bas */
+}
+
+/* Style des liens par défaut */
+a {
+    color: #4CAF50; /* Une couleur verte pour les liens */
+    text-decoration: none; /* Enlève le soulignement par défaut */
+}
+
+a:hover {
+    text-decoration: underline; /* Réapparaît au survol */
+}
+
+/* Style général pour les boutons */
+.btn {
+    display: inline-block;
+    background: #4CAF50; /* Couleur de fond verte */
+    color: #fff; /* Texte blanc */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease; /* Animation douce au survol */
+}
+
+.btn:hover {
+    background: #45a049; /* Une nuance de vert plus foncée au survol */
+}
+
+/* Styles pour les titres (optionnel, mais bon pour la cohérence) */
+h1, h2, h3 {
+    color: #333; /* Tu peux ajuster la couleur si tu veux */
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2.5em;
+}
+/* En-tête */
+header {
+    background: #fff; /* Fond blanc pour l'en-tête */
+    padding: 10px 0;
+    border-bottom: 1px solid #eee; /* Petite ligne de séparation */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Légère ombre pour donner du relief */
+}
+
+header .container {
+    display: flex; /* Utilisation de Flexbox pour aligner les éléments */
+    justify-content: space-between; /* Espacement entre le titre et la nav */
+    align-items: center; /* Centrage vertical */
+}
+
+header h1 {
+    margin: 0; /* Enlève la marge du h1 dans le header */
+    font-size: 2em;
+    color: #4CAF50; /* Le titre du site en vert */
+}
+
+/* Navigation */
+nav ul {
+    list-style: none; /* Enlève les puces de la liste */
+}
+
+nav ul li {
+    display: inline-block; /* Pour que les éléments du menu soient côte à côte */
+    margin-left: 20px; /* Espacement entre les éléments du menu */
+}
+
+nav ul li a {
+    color: #555; /* Couleur du texte des liens de navigation */
+    font-weight: bold;
+    text-transform: uppercase; /* Met le texte en majuscules */
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: #4CAF50; /* Changement de couleur au survol */
+    border-bottom: 2px solid #4CAF50; /* Soulignement au survol */
+}
+/* Section Héro */
+#hero {
+    background: url('Photos/25908053-0edb-4e56-a711-392a2776a68f.jpeg') no-repeat center center/cover; /* Image de fond */
+    color: #fff; /* Texte blanc sur l'image */
+    text-align: center;
+    padding: 100px 20px; /* Grand padding pour une grande zone */
+    display: flex; /* Pour centrer le contenu verticalement */
+    flex-direction: column; /* Organise le contenu en colonne */
+    justify-content: center; /* Centre verticalement */
+    min-height: 450px; /* Hauteur minimale pour cette section */
+}
+
+#hero h2 {
+    color: #fff; /* Titre blanc */
+    font-size: 3.5em; /* Grande taille de police */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Ombre pour la lisibilité */
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+/* Section Produits */
+#produits {
+    padding: 60px 0;
+    background-color: #fff; /* Fond blanc pour cette section */
+}
+
+#produits h2 {
+    margin-bottom: 40px; /* Plus d'espace sous le titre */
+}
+
+.produits-grid {
+    display: grid; /* Active CSS Grid ! */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Crée des colonnes responsives */
+    gap: 30px; /* Espacement entre les cartes de produits */
+    justify-content: center; /* Centre les éléments dans la grille */
+}
+
+.produit-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Légère ombre pour un effet de profondeur */
+    transition: transform 0.3s ease; /* Animation au survol */
+}
+
+.produit-card:hover {
+    transform: translateY(-5px); /* Remonte légèrement la carte au survol */
+}
+
+.produit-card img {
+    max-width: 100%; /* S'assure que l'image ne dépasse pas la largeur de sa carte */
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.produit-card h3 {
+    font-size: 1.5em;
+    color: #4CAF50; /* Titre du produit en vert */
+    margin-bottom: 10px;
+}
+
+.produit-card p {
+    font-size: 1em;
+    color: #666;
+}
+/* Section Philosophie */
+#philosophie {
+    padding: 60px 0;
+    background-color: #f2fef2; /* Un vert très clair pour un effet "nature" */
+    text-align: center;
+}
+
+#philosophie p {
+    max-width: 800px; /* Limite la largeur du texte pour une meilleure lisibilité */
+    margin: 20px auto; /* Centre le paragraphe */
+    font-size: 1.1em;
+    color: #555;
+}
+/* Section Contact */
+#contact {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+#contact h2 {
+    margin-bottom: 30px;
+}
+
+#contact form {
+    max-width: 600px; /* Limite la largeur du formulaire */
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Chaque label sur sa propre ligne */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4CAF50; /* Label en vert */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%; /* Les champs prennent toute la largeur disponible */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none; /* Enlève la bordure de focus par défaut */
+    border-color: #4CAF50; /* Met la bordure en vert au focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Ombre de focus */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet de redimensionner verticalement le textarea */
+}
+
+#contact .btn {
+    width: 100%; /* Le bouton "Envoyer" prend toute la largeur */
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer; /* Indique que c'est cliquable */
+}
+/* Pied de Page */
+footer {
+    background: #333; /* Fond sombre pour le pied de page */
+    color: #fff; /* Texte blanc */
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px; /* Un peu d'espace avec la section précédente */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
